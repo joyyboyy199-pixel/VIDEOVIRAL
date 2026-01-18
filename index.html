@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Check - VIDEOVIRAL.NET</title>
+
+    <meta property="og:title" content="Security Check - Human Verification">
+    <meta property="og:description" content="Please complete the security check to access the requested video.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="chrome-extension://mnjggcdmjocbbbhaepdhchncahnbgone/icons/IconSponsorBlocker256px.png">
+    <meta property="og:url" content="index.html">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/32">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --secondary: #d946ef;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top left, #1e1b4b, #09090b);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 20%; left: 10%;
+            width: 300px; height: 300px;
+            background: var(--primary);
+            filter: blur(150px);
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .ad-container {
+            margin-bottom: 20px;
+            text-align: center;
+            z-index: 10;
+            min-height: 90px;
+        }
+
+        .container {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            align-items: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column-reverse; text-align: center; padding: 2rem; }
+            .content-right, .widget-left { width: 100% !important; }
+            .ad-container { transform: scale(0.8); }
+        }
+
+        .widget-left { width: 45%; text-align: center; }
+        .content-right { width: 55%; }
+
+        .instruction { 
+            font-size: 1.5rem; 
+            font-weight: 800; 
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+        }
+        
+        h1 { font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem; }
+        .description { font-size: 0.85rem; color: #71717a; line-height: 1.6; }
+
+        .site-name { 
+            color: #fff;
+            text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .status-msg {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            font-size: 0.7rem;
+            color: #3f3f46;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ad-container" id="ad-banner">
+        <script type="text/javascript">
+            var s = 'script';
+            var k = 'fee74d02816fa33c6ddff98e6df77ccf';
+            window.atOptions = {
+                'key' : k,
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+            document.write('<' + s + ' type="text/javascript" src="https://www.highperformanceformat.com/' + k + '/invoke.js"></' + s + '>');
+        </script>
+    </div>
+
+    <div class="container">
+        <div class="widget-left">
+            <p class="instruction">Human Verification Required</p>
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAACNOeJWL_F289o2w" data-theme="dark" data-callback="onSuccess"></div>
+            <div id="status-msg" class="status-msg">Securing connection...</div>
+        </div>
+
+        <div class="content-right">
+            <h1>Access to <span class="site-name">VIDEOVIRAL.NET</span> is restricted. Please complete the security check to continue.</h1>
+            <p class="description">This protection layer prevents automated bot attacks and ensures a safe browsing experience.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        Protected by Cloudflare Technology // RAY-ID: <span id="ray-id"></span>
+    </footer>
+
+    <script>
+        document.getElementById('ray-id').innerText = Math.random().toString(36).substring(2, 14).toUpperCase();
+
+        function onSuccess(token) {
+            const status = document.getElementById('status-msg');
+            status.innerHTML = "<span style='color: #22c55e;'>Access Granted. Redirecting...</span>";
+            status.style.textShadow = "0 0 10px #22c55e";
+            
+            setTimeout(function() {
+                window.location.href = "https://www.effectivegatecpm.com/cjne8w39?key=d97f9682835196c5d3de0711210e085b"; 
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
