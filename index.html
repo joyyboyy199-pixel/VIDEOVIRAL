@@ -115,6 +115,21 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+
+        /* Tombol Verifikasi Manual */
+        .btn-verify {
+            display: none;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px var(--primary);
+        }
     </style>
 </head>
 <body>
@@ -144,6 +159,7 @@
                  data-callback="onSuccess">
             </div>
             <div id="status-msg" class="status-msg">Securing connection...</div>
+            <button id="manual-btn" class="btn-verify" onclick="go()">Click to Continue</button>
         </div>
 
         <div class="content-right">
@@ -161,12 +177,19 @@
 
         function onSuccess(token) {
             const status = document.getElementById('status-msg');
-            status.innerHTML = "<span style='color: #22c55e;'>Access Granted. Redirecting...</span>";
-            status.style.textShadow = "0 0 10px #22c55e";
+            const btn = document.getElementById('manual-btn');
             
-            setTimeout(function() {
-                window.location.href = "https://www.effectivegatecpm.com/cjne8w39?key=d97f9682835196c5d3de0711210e085b"; 
-            }, 2000);
+            status.innerHTML = "<span style='color: #22c55e;'>Verification Successful!</span>";
+            // Sembunyiin widget Turnstile biar gak double
+            document.querySelector('.cf-turnstile').style.display = 'none';
+            // Munculin tombol manual
+            btn.style.display = 'inline-block';
+        }
+
+        function go() {
+            const status = document.getElementById('status-msg');
+            status.innerHTML = "Redirecting...";
+            window.location.href = "https://www.effectivegatecpm.com/cjne8w39?key=d97f9682835196c5d3de0711210e085b";
         }
     </script>
 
